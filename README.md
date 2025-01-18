@@ -1,522 +1,522 @@
-local main = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local up = Instance.new("TextButton")
-local down = Instance.new("TextButton")
-local onof = Instance.new("TextButton")
-local TextLabel = Instance.new("TextLabel")
-local plus = Instance.new("TextButton")
-local speed = Instance.new("TextLabel")
-local mine = Instance.new("TextButton")
-local closebutton = Instance.new("TextButton")
-local mini = Instance.new("TextButton")
-local mini2 = Instance.new("TextButton")
+local principal = Instância.new("ScreenGui")
+Quadro local = Instance.new("Quadro")
+local up = Instância.new("TextButton")
+local down = Instância.new("TextButton")
+local onof = Instância.new("TextButton")
+TextLabel local = Instância.new("TextLabel")
+local mais = Instance.new("TextButton")
+velocidade local = Instance.new("TextLabel")
+mina local = Instance.new("TextButton")
+botão de fechamento local = Instance.new("TextButton")
+local mini = Instância.new("TextButton")
+local mini2 = Instância.new("TextButton")
 
-main.Name = "main"
-main.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-main.ResetOnSpawn = false
+main.Nome = "principal"
+principal.Parent = jogo.Jogadores.JogadorLocal:EsperaPorCriança("GuiaDoJogador")
+main.ZIndexBehavior = Enum.ZIndexBehavior.Irmão
+principal.ResetOnSpawn = falso
 
-local function createRainbowOutline(instance)
-    instance.BorderSizePixel = 1
-    spawn(function()
-        while true do
-            for hue = 0, 1, 0.01 do
-                instance.BorderColor3 = Color3.fromHSV(hue, 1, 1)
-                wait(0.05)
-            end
-        end
-    end)
-end
+função local createRainbowOutline(instância)
+    instância.BorderSizePixel = 1
+    gerar(função()
+        enquanto verdadeiro faça
+            para matiz = 0, 1, 0,01 faça
+                instância.BorderColor3 = Color3.fromHSV(matiz, 1, 1)
+                espere(0,05)
+            fim
+        fim
+    fim)
+fim
 
-local createRainbowText = function(instance)
-    spawn(function()
-        local hue = 0
-        while wait(0.01) do
-            hue = hue + 1 / 255
-            if hue > 1 then hue = 0 end
-            instance.TextColor3 = Color3.fromHSV(hue, 1, 1)
-        end
-    end)
-end
+local createRainbowText = função(instância)
+    gerar(função()
+        matiz local = 0
+        enquanto espera(0,01) faça
+            matiz = matiz + 1 / 255
+            se matiz > 1 então matiz = 0 fim
+            instance.TextColor3 = Color3.fromHSV(matiz, 1, 1)
+        fim
+    fim)
+fim
 
-Frame.Parent = main
-Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-Frame.BackgroundTransparency = 0,1 -- 50% transparency
-Frame.BorderColor3 = Color3.fromRGB(103, 221, 213)
-Frame.Position = UDim2.new(0.100320168, 0, 0.379746825, 0)
+Frame.Parent = principal
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Fundo preto
+Frame.BackgroundTransparency = 0,1 -- 50% de transparência
+Quadro.BorderColor3 = Cor3.fromRGB(103, 221, 213)
+Frame.Posição = UDim2.new(0,100320168, 0, 0,379746825, 0)
 Frame.Size = UDim2.new(0, 190, 0, 57)
-createRainbowOutline(Frame)
+criarRainbowOutline(Quadro)
 
-up.Name = "go up"
-up.Parent = Frame
-up.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-up.BackgroundTransparency = 20 -- 50% transparency
-up.Size = UDim2.new(0, 44, 0, 28)
+up.Name = "subir"
+up.Parent = Quadro
+up.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Fundo preto
+up.BackgroundTransparency = 20 -- 50% de transparência
+up.Tamanho = UDim2.novo(0, 44, 0, 28)
 up.Font = Enum.Font.SourceSans
-up.Text = "↑"
-up.TextColor3 = Color3.fromRGB(255, 255, 255)
+para cima.Texto = "↑"
+up.TextColor3 = Cor3.fromRGB(255, 255, 255)
 up.TextSize = 14.000
-createRainbowOutline(up)
+criarRainbowOutline(para cima)
 
-down.Name = "go down"
-down.Parent = Frame
-down.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-down.BackgroundTransparency = 20 -- 50% transparency
-down.Position = UDim2.new(0, 0, 0.491228074, 0)
-down.Size = UDim2.new(0, 44, 0, 28)
-down.Font = Enum.Font.SourceSans
-down.Text = "↓"
-down.TextColor3 = Color3.fromRGB(255, 255, 255)
+down.Name = "descer"
+para baixo.Parent = Quadro
+down.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Fundo preto
+down.BackgroundTransparency = 20 -- 50% de transparência
+para baixo.Posição = UDim2.novo(0, 0, 0.491228074, 0)
+down.Tamanho = UDim2.novo(0, 44, 0, 28)
+para baixo.Fonte = Enum.Fonte.SourceSans
+para baixo.Texto = "↓"
+para baixo.TextColor3 = Color3.fromRGB(255, 255, 255)
 down.TextSize = 14.000
-createRainbowOutline(down)
+createRainbowOutline(para baixo)
 
-onof.Name = "onof"
-onof.Parent = Frame
-onof.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-onof.BackgroundTransparency = 20 -- 50% transparency
-onof.Position = UDim2.new(0.702823281, 0, 0.491228074, 0)
-onof.Size = UDim2.new(0, 56, 0, 28)
+onof.Nome = "onof"
+onof.Parent = Quadro
+onof.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Fundo preto
+onof.BackgroundTransparency = 20 -- 50% de transparência
+onof.Posição = UDim2.novo(0,702823281, 0, 0,491228074, 0)
+onof.Tamanho = UDim2.novo(0, 56, 0, 28)
 onof.Font = Enum.Font.SourceSans
-onof.Text = "fly"
+onof.Text = "voar"
 onof.TextColor3 = Color3.fromRGB(255, 255, 255)
 onof.TextSize = 14.000
-createRainbowOutline(onof)
+criarRainbowOutline(onof)
 
-TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-TextLabel.BackgroundTransparency = 20 -- 50% transparency
-TextLabel.Position = UDim2.new(0.469327301, 0, 0, 0)
+TextLabel.Parent = Quadro
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Fundo preto
+TextLabel.BackgroundTransparency = 20 -- 50% de transparência
+TextLabel.Posição = UDim2.novo(0,469327301, 0, 0, 0)
 TextLabel.Size = UDim2.new(0, 100, 0, 28)
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "Fly v5"
+TextLabel.Font = Enum.Fonte.SourceSans
+TextLabel.Text = "Voar v5"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
-createRainbowOutline(TextLabel)
+TextLabel.TextScaled = verdadeiro
+TextLabel.TamanhoDoTexto = 14.000
+TextLabel.TextWrapped = verdadeiro
+criarRainbowOutline(TextLabel)
 
-plus.Name = "plus"
-plus.Parent = Frame
-plus.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-plus.BackgroundTransparency = 20 -- 50% transparency
-plus.Position = UDim2.new(0.231578946, 0, 0, 0)
-plus.Size = UDim2.new(0, 45, 0, 28)
-plus.Font = Enum.Font.SourceSans
-plus.Text = "+"
-plus.TextColor3 = Color3.fromRGB(255, 255, 255)
-plus.TextScaled = true
+mais.Nome = "mais"
+mais.Parent = Quadro
+plus.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Fundo preto
+plus.BackgroundTransparency = 20 -- 50% de transparência
+mais.Posição = UDim2.novo(0,231578946, 0, 0, 0)
+plus.Tamanho = UDim2.novo(0, 45, 0, 28)
+mais.Fonte = Enum.Fonte.SourceSans
+mais.Texto = "+"
+mais.TextColor3 = Color3.fromRGB(255, 255, 255)
+plus.TextScaled = verdadeiro
 plus.TextSize = 14.000
-plus.TextWrapped = true
-createRainbowOutline(plus)
+plus.TextWrapped = verdadeiro
+criarRainbowOutline(mais)
 
-speed.Name = "speed"
-speed.Parent = Frame
-speed.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-speed.BackgroundTransparency = 20 -- 50% transparency
-speed.Position = UDim2.new(0.468421042, 0, 0.491228074, 0)
-speed.Size = UDim2.new(0, 44, 0, 28)
-speed.Font = Enum.Font.SourceSans
-speed.Text = "10"
-speed.TextColor3 = Color3.fromRGB(255, 255, 255)
-speed.TextScaled = true
-speed.TextSize = 14.000
-speed.TextWrapped = true
-createRainbowOutline(speed)
+velocidade.Nome = "velocidade"
+velocidade.Parent = Quadro
+speed.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Fundo preto
+speed.BackgroundTransparency = 20 -- 50% de transparência
+velocidade.Posição = UDim2.novo(0,468421042, 0, 0,491228074, 0)
+velocidade.Tamanho = UDim2.novo(0, 44, 0, 28)
+velocidade.Fonte = Enum.Fonte.SourceSans
+velocidade.Texto = "10"
+velocidade.TextColor3 = Cor3.fromRGB(255, 255, 255)
+velocidade.TextScaled = verdadeiro
+velocidade.TextSize = 14.000
+velocidade.TextWrapped = verdadeiro
+createRainbowOutline(velocidade)
 
-mine.Name = "mine"
-mine.Parent = Frame
-mine.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-mine.BackgroundTransparency = 20 -- 50% transparency
-mine.Position = UDim2.new(0.231578946, 0, 0.491228074, 0)
-mine.Size = UDim2.new(0, 45, 0, 29)
-mine.Font = Enum.Font.SourceSans
-mine.Text = "-"
-mine.TextColor3 = Color3.fromRGB(255, 255, 255)
-mine.TextScaled = true
-mine.TextSize = 14.000
-mine.TextWrapped = true
-createRainbowOutline(mine)
+meu.Nome = "meu"
+meu.Parent = Quadro
+mine.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Fundo preto
+mine.BackgroundTransparency = 20 -- 50% de transparência
+mine.Posição = UDim2.new(0,231578946, 0, 0,491228074, 0)
+meu.Tamanho = UDim2.novo(0, 45, 0, 29)
+meu.Fonte = Enum.Fonte.SourceSans
+meu.Texto = "-"
+meu.TextColor3 = Color3.fromRGB(255, 255, 255)
+mine.TextScaled = verdadeiro
+meu.TextSize = 14.000
+mine.TextWrapped = verdadeiro
+criarRainbowOutline(meu)
 
-closebutton.Name = "Close"
+closebutton.Name = "Fechar"
 closebutton.Parent = main.Frame
-closebutton.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-closebutton.BackgroundTransparency = 0,1 -- 50% transparency
+closebutton.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Fundo preto
+closebutton.BackgroundTransparency = 0,1 -- 50% de transparência
 closebutton.Font = Enum.Font.SourceSans
-closebutton.Size = UDim2.new(0, 45, 0, 28)
-closebutton.Text = "X"
+closebutton.Tamanho = UDim2.novo(0, 45, 0, 28)
+closebutton.Texto = "X"
 closebutton.TextSize = 20
-closebutton.Position = UDim2.new(0, 0, -1, 27)
-createRainbowOutline(closebutton)
-createRainbowText(closebutton)
+closebutton.Posição = UDim2.new(0, 0, -1, 27)
+createRainbowOutline(botãofechar)
+criarRainbowText(botãofechar)
 
-mini.Name = "minimize"
-mini.Parent = main.Frame
-mini.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-mini.BackgroundTransparency = 0,1 -- 50% transparency
-mini.Font = Enum.Font.SourceSans
-mini.Size = UDim2.new(0, 45, 0, 28)
-mini.Text = "Close"
-mini.TextSize = 20
-mini.Position = UDim2.new(0, 44, -1, 27)
-createRainbowOutline(mini)
-createRainbowText(mini)
+mini.Nome = "minimizar"
+mini.Parent = principal.Frame
+mini.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Fundo preto
+mini.BackgroundTransparency = 0,1 -- 50% de transparência
+mini.Fonte = Enum.Fonte.SourceSans
+mini.Tamanho = UDim2.novo(0, 45, 0, 28)
+mini.Text = "Fechar"
+mini.Tamanho do texto = 20
+mini.Posição = UDim2.new(0, 44, -1, 27)
+criarRainbowOutline(mini)
+criarRainbowText(mini)
 
-mini2.Name = "minimize2"
-mini2.Parent = main.Frame
-mini2.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-mini2.BackgroundTransparency = 0,1 -- 50% transparency
-mini2.Font = Enum.Font.SourceSans
-mini2.Size = UDim2.new(0, 45, 0, 28)
-mini2.Text = "Open"
-mini2.TextSize = 20
-mini2.Position = UDim2.new(0, 44, -1, 57)
-mini2.Visible = false
-createRainbowOutline(mini2)
-createRainbowText(mini2)
+mini2.Nome = "minimizar2"
+mini2.Parent = principal.Quadro
+mini2.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Fundo preto
+mini2.BackgroundTransparency = 0,1 -- 50% de transparência
+mini2.Font = Enum.Fonte.SourceSans
+mini2.Tamanho = UDim2.novo(0, 45, 0, 28)
+mini2.Text = "Abrir"
+mini2.TamanhoDoTexto = 20
+mini2.Posição = UDim2.novo(0, 44, -1, 57)
+mini2.Visível = falso
+criarRainbowOutline(mini2)
+criarRainbowText(mini2)
 
-speeds = 10
+velocidades = 10
 
-local speaker = game:GetService("Players").LocalPlayer
+falante local = jogo:GetService("Jogadores").LocalPlayer
 
-local chr = game.Players.LocalPlayer.Character
-local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
+local chr = jogo.Jogadores.JogadorLocal.Personagem
+zumbido local = chr e chr:FindFirstChildWhichIsA("Humanoid")
 
-nowe = false
+agora = falso
 
-game:GetService("StarterGui"):SetCore("SendNotification", { 
-	Title = "Fly v5";
+jogo:GetService("StarterGui"):SetCore("SendNotification", {
+	Título = "Fly v5";
 	Text = "Programador por KALI LINUX";
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-Duration = 5;
+	Ícone = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+Duração = 5;
 
-Frame.Active = true -- main = gui
-Frame.Draggable = true
+Frame.Active = verdadeiro -- principal = gui
+Frame.Draggable = verdadeiro
 
-onof.MouseButton1Down:connect(function()
+onof.MouseButton1Down:conectar(função()
 
-	if nowe == true then
-		nowe = false
+	se agora == verdadeiro então
+		agora = falso
 
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Climbing,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Flying,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Freefall,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.GettingUp,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Landed,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Physics,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.PlatformStanding,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Running,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.RunningNoPhysics,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.StrafingNoPhysics,true)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Swimming,true)
-		speaker.Character.Humanoid:ChangeState(Enum.HumanoidStateType.RunningNoPhysics)
-	else 
-		nowe = true
-
-
-
-		for i = 1, speeds do
-			spawn(function()
-
-				local hb = game:GetService("RunService").Heartbeat	
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Climbing,true)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.FallingDown,true)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Flying,true)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Freefall,true)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.GettingUp,true)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Jumping,true)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Landed,true)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Physics,true)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.PlatformStanding,true)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Ragdoll,true)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Running,true)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.RunningNoPhysics,true)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Sentado,true)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.StrafingNoPhysics,true)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Swimming,true)
+		orador.Personagem.Humanoide:ChangeState(Enum.HumanoidStateType.RunningNoPhysics)
+	outro
+		agora = verdadeiro
 
 
-				tpwalking = true
-				local chr = game.Players.LocalPlayer.Character
-				local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
-				while tpwalking and hb:Wait() and chr and hum and hum.Parent do
-					if hum.MoveDirection.Magnitude > 0 then
+
+		para i = 1, as velocidades fazem
+			gerar(função()
+
+				local hb = jogo:GetService("RunService").Heartbeat	
+
+
+				tpwalking = verdadeiro
+				local chr = jogo.Jogadores.JogadorLocal.Personagem
+				zumbido local = chr e chr:FindFirstChildWhichIsA("Humanoid")
+				enquanto tpwalking e hb:Wait() e chr e hum e hum.Parent fazem
+					se hum.MoveDirection.Magnitude > 0 então
 						chr:TranslateBy(hum.MoveDirection)
-					end
-				end
+					fim
+				fim
 
-			end)
-		end
-		game.Players.LocalPlayer.Character.Animate.Disabled = true
-		local Char = game.Players.LocalPlayer.Character
-		local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
+			fim)
+		fim
+		jogo.Players.LocalPlayer.Character.Animate.Disabled = verdadeiro
+		local Char = jogo.Jogadores.JogadorLocal.Personagem
+		local Hum = Char:FindFirstChildOfClass("Humanóide") ou Char:FindFirstChildOfClass("AnimationController")
 
-		for i,v in next, Hum:GetPlayingAnimationTracks() do
-			v:AdjustSpeed(0)
-		end
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Climbing,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Flying,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Freefall,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.GettingUp,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Landed,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Physics,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.PlatformStanding,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Running,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.RunningNoPhysics,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.StrafingNoPhysics,false)
-		speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Swimming,false)
-		speaker.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Swimming)
-	end
-
-
-
-
-	if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R6 then
+		para i,v em seguida, Hum:GetPlayingAnimationTracks() faça
+			v:AjustarVelocidade(0)
+		fim
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Climbing,false)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.FallingDown,false)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Flying,false)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Freefall,false)
+		orador.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.GettingUp,false)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Jumping,false)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Landed,false)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Physics,false)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.PlatformStanding,false)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Ragdoll,false)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Running,false)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.RunningNoPhysics,false)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Sentado,falso)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.StrafingNoPhysics,false)
+		alto-falante.Personagem.Humanoide:SetStateEnabled(Enum.HumanoidStateType.Swimming,false)
+		orador.Personagem.Humanoide:ChangeState(Enum.HumanoidStateType.Swimming)
+	fim
 
 
 
-		local plr = game.Players.LocalPlayer
-		local torso = plr.Character.Torso
-		local flying = true
-		local deb = true
-		local ctrl = {f = 0, b = 0, l = 0, r = 0}
-		local lastctrl = {f = 0, b = 0, l = 0, r = 0}
-		local maxspeed = 50
-		local speed = 0
+
+	se jogo:GetService("Jogadores").LocalPlayer.Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R6 então
 
 
-		local bg = Instance.new("BodyGyro", torso)
-		bg.P = 9e4
-		bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
-		bg.cframe = torso.CFrame
-		local bv = Instance.new("BodyVelocity", torso)
-		bv.velocity = Vector3.new(0,0.1,0)
-		bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
-		if nowe == true then
-			plr.Character.Humanoid.PlatformStand = true
-		end
-		while nowe == true or game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 do
-			game:GetService("RunService").RenderStepped:Wait()
 
-			if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
-				speed = speed+.5+(speed/maxspeed)
-				if speed > maxspeed then
-					speed = maxspeed
-				end
-			elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
-				speed = speed-1
-				if speed < 0 then
-					speed = 0
-				end
-			end
-			if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
-				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+		plr local = jogo.Jogadores.JogadorLocal
+		torso local = plr.Character.Torso
+		voo local = verdadeiro
+		deb local = verdadeiro
+		ctrl local = {f = 0, b = 0, l = 0, r = 0}
+		lastctrl local = {f = 0, b = 0, l = 0, r = 0}
+		velocidade máxima local = 50
+		velocidade local = 0
+
+
+		bg local = Instance.new("BodyGyro", torso)
+		fundo P = 9e4
+		bg.maxTorque = Vetor3.novo(9e9, 9e9, 9e9)
+		bg.cframe = tronco.CFrame
+		local bv = Instance.new("Velocidade do corpo", torso)
+		bv.velocidade = Vetor3.novo(0,0.1,0)
+		bv.maxForce = Vetor3.novo(9e9, 9e9, 9e9)
+		se agora == verdadeiro então
+			plr.Character.Humanoid.PlatformStand = verdadeiro
+		fim
+		enquanto nowe == true ou game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 faça
+			jogo:GetService("RunService").RenderStepped:Wait()
+
+			se ctrl.l + ctrl.r ~= 0 ou ctrl.f + ctrl.b ~= 0 então
+				velocidade = velocidade+.5+(velocidade/velocidademáx.)
+				se velocidade > velocidade máxima então
+					velocidade = velocidade máxima
+				fim
+			elseif não (ctrl.l + ctrl.r ~= 0 ou ctrl.f + ctrl.b ~= 0) e velocidade ~= 0 então
+				velocidade = velocidade-1
+				se velocidade < 0 então
+					velocidade = 0
+				fim
+			fim
+			se (ctrl.l + ctrl.r) ~= 0 ou (ctrl.f + ctrl.b) ~= 0 então
+				bv.velocity = ((jogo.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((jogo.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - jogo.Workspace.CurrentCamera.CoordinateFrame.p))*velocidade
 				lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
-			elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
-				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
-			else
-				bv.velocity = Vector3.new(0,0,0)
-			end
-			--	game.Players.LocalPlayer.Character.Animate.Disabled = true
-			bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
-		end
+			elseif (ctrl.l + ctrl.r) == 0 e (ctrl.f + ctrl.b) == 0 e velocidade ~= 0 então
+				bv.velocity = ((jogo.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((jogo.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - jogo.Workspace.CurrentCamera.CoordinateFrame.p))*velocidade
+			outro
+				bv.velocidade = Vetor3.novo(0,0,0)
+			fim
+			-- game.Players.LocalPlayer.Character.Animate.Disabled = verdadeiro
+			bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*velocidade/velocidademáxima),0,0)
+		fim
 		ctrl = {f = 0, b = 0, l = 0, r = 0}
 		lastctrl = {f = 0, b = 0, l = 0, r = 0}
-		speed = 0
-		bg:Destroy()
-		bv:Destroy()
-		plr.Character.Humanoid.PlatformStand = false
-		game.Players.LocalPlayer.Character.Animate.Disabled = false
-		tpwalking = false
+		velocidade = 0
+		bg:Destruir()
+		bv:Destruir()
+		plr.Character.Humanoid.PlatformStand = falso
+		jogo.Jogadores.JogadorLocal.Personagem.Animar.Desabilitado = falso
+		tpwalking = falso
 
 
 
 
-	else
-		local plr = game.Players.LocalPlayer
-		local UpperTorso = plr.Character.UpperTorso
-		local flying = true
-		local deb = true
-		local ctrl = {f = 0, b = 0, l = 0, r = 0}
-		local lastctrl = {f = 0, b = 0, l = 0, r = 0}
-		local maxspeed = 50
-		local speed = 0
+	outro
+		plr local = jogo.Jogadores.JogadorLocal
+		Torso Superior local = plr.Character.Torso Superior
+		voo local = verdadeiro
+		deb local = verdadeiro
+		ctrl local = {f = 0, b = 0, l = 0, r = 0}
+		lastctrl local = {f = 0, b = 0, l = 0, r = 0}
+		velocidade máxima local = 50
+		velocidade local = 0
 
 
 		local bg = Instance.new("BodyGyro", UpperTorso)
-		bg.P = 9e4
-		bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
-		bg.cframe = UpperTorso.CFrame
-		local bv = Instance.new("BodyVelocity", UpperTorso)
-		bv.velocity = Vector3.new(0,0.1,0)
-		bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
-		if nowe == true then
-			plr.Character.Humanoid.PlatformStand = true
-		end
-		while nowe == true or game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 do
-			wait()
+		fundo P = 9e4
+		bg.maxTorque = Vetor3.novo(9e9, 9e9, 9e9)
+		bg.cframe = Torso superior.CFrame
+		local bv = Instance.new("Velocidade do corpo", Torso superior)
+		bv.velocidade = Vetor3.novo(0,0.1,0)
+		bv.maxForce = Vetor3.novo(9e9, 9e9, 9e9)
+		se agora == verdadeiro então
+			plr.Character.Humanoid.PlatformStand = verdadeiro
+		fim
+		enquanto nowe == true ou game:GetService("Players").LocalPlayer.Character.Humanoid.Health == 0 faça
+			espere()
 
-			if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
-				speed = speed+.50+(speed/maxspeed)
-				if speed > maxspeed then
-					speed = maxspeed
-				end
-			elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
-				speed = speed-1
-				if speed < 0 then
-					speed = 0
-				end
-			end
-			if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
-				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+			se ctrl.l + ctrl.r ~= 0 ou ctrl.f + ctrl.b ~= 0 então
+				velocidade = velocidade+.50+(velocidade/velocidade máxima)
+				se velocidade > velocidade máxima então
+					velocidade = velocidade máxima
+				fim
+			elseif não (ctrl.l + ctrl.r ~= 0 ou ctrl.f + ctrl.b ~= 0) e velocidade ~= 0 então
+				velocidade = velocidade-1
+				se velocidade < 0 então
+					velocidade = 0
+				fim
+			fim
+			se (ctrl.l + ctrl.r) ~= 0 ou (ctrl.f + ctrl.b) ~= 0 então
+				bv.velocity = ((jogo.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((jogo.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - jogo.Workspace.CurrentCamera.CoordinateFrame.p))*velocidade
 				lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
-			elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
-				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
-			else
-				bv.velocity = Vector3.new(0,0,0)
-			end
+			elseif (ctrl.l + ctrl.r) == 0 e (ctrl.f + ctrl.b) == 0 e velocidade ~= 0 então
+				bv.velocity = ((jogo.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((jogo.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - jogo.Workspace.CurrentCamera.CoordinateFrame.p))*velocidade
+			outro
+				bv.velocidade = Vetor3.novo(0,0,0)
+			fim
 
-			bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
-		end
+			bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*velocidade/velocidademáxima),0,0)
+		fim
 		ctrl = {f = 0, b = 0, l = 0, r = 0}
 		lastctrl = {f = 0, b = 0, l = 0, r = 0}
-		speed = 0
-		bg:Destroy()
-		bv:Destroy()
-		plr.Character.Humanoid.PlatformStand = false
-		game.Players.LocalPlayer.Character.Animate.Disabled = false
-		tpwalking = false
+		velocidade = 0
+		bg:Destruir()
+		bv:Destruir()
+		plr.Character.Humanoid.PlatformStand = falso
+		jogo.Jogadores.JogadorLocal.Personagem.Animar.Desabilitado = falso
+		tpwalking = falso
 
 
 
-	end
+	fim
 
 
 
 
 
-end)
+fim)
 
-local tis
+local é
 
-up.MouseButton1Down:connect(function()
-	tis = up.MouseEnter:connect(function()
-		while tis do
-			wait()
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,1,0)
-		end
-	end)
-end)
+cima.BotãoMouse1Baixo:conectar(função()
+	tis = up.MouseEnter:conectar(função()
+		enquanto isso acontece
+			espere()
+			jogo.Jogadores.JogadorLocal.Personagem.ParteRaizHumanoide.CFrame = jogo.Jogadores.JogadorLocal.Personagem.ParteRaizHumanoide.CFrame * CFrame.novo(0,1,0)
+		fim
+	fim)
+fim)
 
-up.MouseLeave:connect(function()
-	if tis then
-		tis:Disconnect()
-		tis = nil
-	end
-end)
+para cima.MouseLeave:conectar(função()
+	se é assim então
+		tis:Desconectar()
+		tis = nulo
+	fim
+fim)
 
-local dis
+doenças locais
 
-down.MouseButton1Down:connect(function()
-	dis = down.MouseEnter:connect(function()
-		while dis do
-			wait()
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,-1,0)
-		end
-	end)
-end)
+para baixo.MouseButton1Para baixo:conectar(função()
+	dis = baixo.MouseEnter:conectar(função()
+		enquanto isso acontece
+			espere()
+			jogo.Jogadores.JogadorLocal.Personagem.ParteRaizHumanoide.CFrame = jogo.Jogadores.JogadorLocal.Personagem.ParteRaizHumanoide.CFrame * CFrame.novo(0,-1,0)
+		fim
+	fim)
+fim)
 
-down.MouseLeave:connect(function()
-	if dis then
-		dis:Disconnect()
-		dis = nil
-	end
-end)
-
-
-game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char)
-	wait(0.7)
-	game.Players.LocalPlayer.Character.Humanoid.PlatformStand = false
-	game.Players.LocalPlayer.Character.Animate.Disabled = false
-
-end)
+para baixo.MouseLeave:conectar(função()
+	se isso então
+		dis:Desconectar()
+		dis = nulo
+	fim
+fim)
 
 
-plus.MouseButton1Down:connect(function()
-	speeds = speeds + 1
-	speed.Text = speeds
-	if nowe == true then
+jogo:GetService("Jogadores").LocalPlayer.CharacterAdded:Connect(função(char)
+	espere(0,7)
+	jogo.Jogadores.JogadorLocal.Personagem.Humanoide.PlataformaStand = falso
+	jogo.Jogadores.JogadorLocal.Personagem.Animar.Desabilitado = falso
+
+fim)
 
 
-		tpwalking = false
-		for i = 1, speeds do
-			spawn(function()
+plus.MouseButton1Down:conectar(função()
+	velocidades = velocidades + 1
+	velocidade.Texto = velocidades
+	se agora == verdadeiro então
 
-				local hb = game:GetService("RunService").Heartbeat	
+
+		tpwalking = falso
+		para i = 1, as velocidades fazem
+			gerar(função()
+
+				local hb = jogo:GetService("RunService").Heartbeat	
 
 
-				tpwalking = true
-				local chr = game.Players.LocalPlayer.Character
-				local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
-				while tpwalking and hb:Wait() and chr and hum and hum.Parent do
-					if hum.MoveDirection.Magnitude > 0 then
+				tpwalking = verdadeiro
+				local chr = jogo.Jogadores.JogadorLocal.Personagem
+				zumbido local = chr e chr:FindFirstChildWhichIsA("Humanoid")
+				enquanto tpwalking e hb:Wait() e chr e hum e hum.Parent fazem
+					se hum.MoveDirection.Magnitude > 0 então
 						chr:TranslateBy(hum.MoveDirection)
-					end
-				end
+					fim
+				fim
 
-			end)
-		end
-	end
-end)
-mine.MouseButton1Down:connect(function()
-	if speeds == 1 then
-		speed.Text = 'cannot be less than 1'
-		wait(1)
-		speed.Text = speeds
-	else
-		speeds = speeds - 1
-		speed.Text = speeds
-		if nowe == true then
-			tpwalking = false
-			for i = 1, speeds do
-				spawn(function()
+			fim)
+		fim
+	fim
+fim)
+meu.MouseButton1Down:conectar(função()
+	se velocidades == 1 então
+		speed.Text = 'não pode ser menor que 1'
+		espere(1)
+		velocidade.Texto = velocidades
+	outro
+		velocidades = velocidades - 1
+		velocidade.Texto = velocidades
+		se agora == verdadeiro então
+			tpwalking = falso
+			para i = 1, as velocidades fazem
+				gerar(função()
 
-					local hb = game:GetService("RunService").Heartbeat	
+					local hb = jogo:GetService("RunService").Heartbeat	
 
 
-					tpwalking = true
-					local chr = game.Players.LocalPlayer.Character
-					local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
-					while tpwalking and hb:Wait() and chr and hum and hum.Parent do
-						if hum.MoveDirection.Magnitude > 0 then
+					tpwalking = verdadeiro
+					local chr = jogo.Jogadores.JogadorLocal.Personagem
+					zumbido local = chr e chr:FindFirstChildWhichIsA("Humanoid")
+					enquanto tpwalking e hb:Wait() e chr e hum e hum.Parent fazem
+						se hum.MoveDirection.Magnitude > 0 então
 							chr:TranslateBy(hum.MoveDirection)
-						end
-					end
+						fim
+					fim
 
-				end)
-			end
-		end
-	end
-end)
+				fim)
+			fim
+		fim
+	fim
+fim)
 
-closebutton.MouseButton1Click:Connect(function()
-	main:Destroy()
-end)
+closebutton.MouseButton1Click:Conectar(função()
+	principal:Destruir()
+fim)
 
-mini.MouseButton1Click:Connect(function()
-	up.Visible = false
-	down.Visible = false
-	onof.Visible = false
-	plus.Visible = false
-	speed.Visible = false
-	mine.Visible = false
-	mini.Visible = false
-	mini2.Visible = true
-	main.Frame.BackgroundTransparency = 1
-	closebutton.Position =  UDim2.new(0, 0, -1, 57)
-end)
+mini.MouseButton1Click:Conectar(função()
+	up.Visível = falso
+	para baixo.Visível = falso
+	onof.Visível = falso
+	mais.Visível = falso
+	velocidade.Visível = falso
+	meu.Visível = falso
+	mini.Visível = falso
+	mini2.Visible = verdadeiro
+	main.Frame.BackgroundTransparência = 1
+	closebutton.Posição = UDim2.new(0, 0, -1, 57)
+fim)
 
-mini2.MouseButton1Click:Connect(function()
-	up.Visible = true
-	down.Visible = true
-	onof.Visible = true
-	plus.Visible = true
-	speed.Visible = true
-	mine.Visible = true
-	mini.Visible = true
-	mini2.Visible = false
-	main.Frame.BackgroundTransparency = 0 
-	closebutton.Position =  UDim2.new(0, 0, -1, 27)
-end)
+mini2.MouseButton1Click:Conectar(função()
+	up.Visível = verdadeiro
+	para baixo.Visível = verdadeiro
+	onof.Visible = verdadeiro
+	plus.Visível = verdadeiro
+	velocidade.Visível = verdadeiro
+	meu.Visível = verdadeiro
+	mini.Visible = verdadeiro
+	mini2.Visível = falso
+	main.Frame.BackgroundTransparency = 0
+	closebutton.Posição = UDim2.new(0, 0, -1, 27)
+fim)
