@@ -185,7 +185,7 @@ nowe = false
 
 game:GetService("StarterGui"):SetCore("SendNotification", { 
 	Title = "Fly v5";
-	Text = "Feito por mim @Vito0296poq";
+	Text = "Desenvolvedor @Vito0296poq";
 	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
 Duration = 5;
 
